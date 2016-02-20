@@ -1,32 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Error {{src}}</title>
-	<link rel="stylesheet" type="text/css" href="http://localhost:81/projectSlim2/src/css/bootstrap.min.css">
-	<script src="http://localhost:81/projectSlim2/src/css/js/bootstrap.js"></script>
+	<title>WineBar</title>
+	<link rel="stylesheet" type="text/css" href="http://localhost:81/projectSlim2/src/foundation/css/foundation.min.css">
+
 	<style>
 		body{
-			text-align: center
+			text-align: center;
 		}
-		.jumbotron{
-			background-color: transparent;
-		}
-		span{
-			font-size: 20px;
-			color: black;
+		a{
+			font-size: 22px;
+			color: black !important;
 			cursor: pointer;
 		}
-		span:hover{
-			color: grey;
+		a:hover{
+			color: grey !important;
+			cursor: pointer !important;
+		}
+
+		.callout{
+			border: none;
+			height: 600px;
+		}
+		img{
+			max-width: 700px !important;
+		}
+		@media only screen and (max-width: 40em){
+			img{
+				margin-left: -10%;
+			}
+
+		}
+		@media only screen and (max-width: 30em){
+			img{
+				margin-left: -40%;
+			}
+
+		}
+		@media only screen and (max-width: 25em){
+			img{
+				margin-left: -55%;
+			}
+
 		}
 	</style>
 </head>
 <body>
-	<div class="container">
-		<div class="jumbotron">
-			<img src="http://localhost:81/projectSlim2/src/img/{{src}}.svg" class="img-responsive col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2" alt="Image" />
+	<div class="callout large">
+		<div class="row column text-center">
+			<img src="http://localhost:81/projectSlim2/src/img/{{src}}.svg" class="img-responsive" alt="Image" />
 		</div>
 	</div>
-	<a href="http://localhost:81/projectSlim2/"><span class="glyphicon glyphicon-arrow-left"> Previous page</span></a>
+	<div class="callout large">
+		<a href="http://localhost:81/projectSlim3/">Previous page</a> 
+	</div>
 </body>
 </html>
