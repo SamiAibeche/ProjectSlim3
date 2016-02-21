@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>WineBar</title>
-	<link rel="stylesheet" type="text/css" href="http://localhost:81/projectSlim2/src/foundation/css/foundation.min.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost:81/projectSlim3/src/foundation/css/foundation.min.css">
 	<script src="http://localhost:81/projectSlim2/src/js/jquery-1.11.3.min.js"></script>
 
 	<style>
@@ -34,6 +34,9 @@
 		}
 		.callout{
 			border: none;
+		}
+		.fontSmall{
+			font-size: 0.6em;
 		}
 	</style>
 </head>
@@ -78,19 +81,19 @@
     <div class="callout large">
         <div class="row" id="catalog">
 			{% for data in datas %}
-				<div class="small-12 medium-6 large-4 columns" style="padding-bottom: 50px">
-					<p class="small-12 columns">
+				<div class="small-12 medium-4 large-3 columns" style="padding-bottom: 50px">
+					<p class="small-12 columns fontSmall">
 					<strong>{{ data.name }} - {{ data.year }}</strong></p>
-					<img  class="columns"
+					<img  class="thumbnail"
 				 id="img{{ data.id }}" src="http://localhost:81/projectSlim2/src/img/{{ data.picture }}" alt="{{ data.name }}" />	
 				</div>
 			{% endfor %}  
         </div> 
     </div>
 
-    <script src="http://localhost:81/projectSlim2/src/foundation/js/vendor/jquery.min.js"></script>
-	<script src="http://localhost:81/projectSlim2/src/foundation/js/vendor/what-input.min.js"></script>
-	<script src="http://localhost:81/projectSlim2/src/foundation/js/foundation.min.js"></script>
-	<script src="http://localhost:81/projectSlim2/src/foundation/js/app.js"></script>
+    <script src="http://localhost:81/projectSlim3/src/foundation/js/vendor/jquery.min.js"></script>
+	<script src="http://localhost:81/projectSlim3/src/foundation/js/vendor/what-input.min.js"></script>
+	<script src="http://localhost:81/projectSlim3/src/foundation/js/foundation.min.js"></script>
+	<script src="http://localhost:81/projectSlim3/src/foundation/js/app.js"></script>
 </body>
 </html>
