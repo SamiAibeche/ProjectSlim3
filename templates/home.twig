@@ -3,7 +3,9 @@
 <head>
 	<title>WineBar</title>
 	<link rel="stylesheet" type="text/css" href="http://localhost:81/projectSlim3/src/foundation/css/foundation.min.css">
-	<script src="http://localhost:81/projectSlim3/src/js/jquery-1.11.3.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://localhost:81/projectSlim3/src/foundation/reveal/reveal.css">
+	<script type="text/javascript" src="http://localhost:81/projectSlim3/src/foundation/reveal/jquery-1.4.4.min.js"></script>
+	<script src="http://localhost:81/projectSlim3/src/foundation/reveal/jquery.reveal.js"></script>
 
 	<style>
 		body{
@@ -84,14 +86,22 @@
 				<div class="small-12 medium-4 large-3 columns" style="padding-bottom: 50px">
 					<p class="small-12 columns fontSmall">
 					<strong>{{ data.name }} - {{ data.year }}</strong></p>
-					<img  class="thumbnail"
-				 id="img{{ data.id }}" src="http://localhost:81/projectSlim2/src/img/{{ data.picture }}" alt="{{ data.name }}" />	
+				 	<a href="#" data-reveal-id="firstModal"><img  class="thumbnail cel"
+				 	id="img{{ data.id }}" src="http://localhost:81/projectSlim2/src/img/{{ data.picture }}" alt="{{ data.name }}" /></a>
+
+					<div id="firstModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
+					 	<h4 id="firstModalTitle"></h4>
+					  	<p><strong id="grapes"></strong><p>
+					  	<p><strong id="country"></strong><p>
+					  	<p id="content"></a>
+					</div>	
 				</div>
 			{% endfor %}  
         </div> 
     </div>
 
     <script src="http://localhost:81/projectSlim3/src/foundation/js/vendor/jquery.min.js"></script>
+    <script src="http://localhost:81/projectSlim3/src/js/main.js"></script>
 	<script src="http://localhost:81/projectSlim3/src/foundation/js/vendor/what-input.min.js"></script>
 	<script src="http://localhost:81/projectSlim3/src/foundation/js/foundation.min.js"></script>
 	<script src="http://localhost:81/projectSlim3/src/foundation/js/app.js"></script>

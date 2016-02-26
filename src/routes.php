@@ -75,3 +75,30 @@ $app->get('/orderby/{order}', function (Request $request, Response $response) us
       echo $twig->render('error.twig',array('src' => '400'));
     }
 });
+$app->get('/{id}', function (Request $request, Response $response) {
+
+    try {
+      
+        //Recup - Initializing data 
+        $id = $request->getAttribute('id');
+
+        //Load method (return an object)
+        $wine = R::load('wine',$id);
+
+        //ExportAll method (transform the object on an array)
+        $arrays = R::exportAll( $wine );
+
+        //Return data
+        if(!empty($arrays)){
+            $dataStr = json_encode($arrays, JSON_PRETTY_PRINT);
+            echo $dataStr;
+        } else {
+            echo "unvalid";
+        }
+    //IF 404 - 500 
+    } catch (ResourceNotFoundException $e) {
+      echo "404";
+    } catch (Exception $e) {
+      echo "400";
+    }
+});
