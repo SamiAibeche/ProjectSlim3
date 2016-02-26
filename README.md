@@ -14,5 +14,5 @@
 | Spécifier dans ces templates-enfants le contenu des blocs définit dans le layout principal **-Ok** | Ajouter un menu de pagination **-Ok** |
 |  - | Ajouter un menu Off-Canvas  **-TODO**  |
 |  - | Utiliser Ajax jQuery pour envoyer la requête de tri et récupérer les données JSON contenant les bouteilles triées, puis les afficher sans recharger toute la page  **-TODO**  |
-|  - | Ajouter un formulaire avec une liste déroulante des pays afin de filtrer les bouteilles par pays sélectionné
-utiliser la même technique JSON/Ajax pour actualiser le catalogue sans recharger toute la page  **-TODO**  |
+|  - | Ajouter un formulaire avec une liste déroulante des pays afin de filtrer les bouteilles par pays sélectionné |
+| - | Utiliser la même technique JSON/Ajax pour actualiser le catalogue sans recharger toute la page  **-TODO**  |
