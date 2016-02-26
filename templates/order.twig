@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>WineBar</title>
-	<link rel="stylesheet" type="text/css" href="http://localhost:81/projectSlim3/src/foundation/css/foundation.min.css">
-	<script src="http://localhost:81/projectSlim3/src/js/jquery-1.11.3.min.js"></script>
+{% extends "base.twig" %}
 
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ parent() }}
 	<style>
 		body{
 			text-align: center
@@ -36,43 +34,9 @@
 			border: none;
 		}
 	</style>
-</head>
-<body>
-	<nav>
-		<div class="title-bar" data-responsive-toggle="menu" data-hide-for="medium">
-	        <button class="menu-icon" type="button" data-toggle></button>
-	        <div class="title-bar-title" data-hide-for="large">Menu</div>
-	     </div>
-	      
-	      <div class="top-bar" id="menu">
-	        <div class="top-bar-left">
-	          <ul class="dropdown menu" data-dropdown-menu>
-	            <li class="menu-text">Sort Wine by :</li>
-	            <li>
-	              <a href="./name">Name</a>
-	            </li>
-	            <li>
-	              <a href="./year">Year</a>
-	            </li>
-	            <li>
-	              <a href="./region">Region</a>
-	            </li>
-	            <li>
-	              <a href="./country">Country</a>
-	            </li>
-	          </ul>
-	        </div>
-			<ul class="top-bar-right menu">
-	          	<li>
-	              <a href="../">Home</a>
-	            </li>
-	        </ul>
-	      </div>
-	<nav>
-	<div class="callout large">
-		<div class="row column text-center">
-			<h1 id="home" class="mainTitre"><strong>Wine Bar</strong></h1>
-			<p class="lead">Wine from your area</p>
+{% endblock %}
+{% block content %}
+{{ parent() }}
 			<p>Sorted by <strong>{{ order|capitalize }}</strong></p>
 		</div>
 	</div>
@@ -81,17 +45,17 @@
 			{% for data in datas %}
 				<div class="small-12 medium-4 large-3 columns" style="padding-bottom: 50px">
 					<p class="small-12 columns fontSmall">
-					<strong>{{ data.name }} - {{ data.year }}</strong></p>
+					<strong>{{ data.name }}</strong></p>
 					<img  class="thumbnail"
 				 id="img{{ data.id }}" src="http://localhost:81/projectSlim2/src/img/{{ data.picture }}" alt="{{ data.name }}" />	
 				</div>
 			{% endfor %}  
         </div> 
     </div>
-
-    <script src="http://localhost:81/projectSlim3/src/foundation/js/vendor/jquery.min.js"></script>
-	<script src="http://localhost:81/projectSlim3/src/foundation/js/vendor/what-input.min.js"></script>
-	<script src="http://localhost:81/projectSlim3/src/foundation/js/foundation.min.js"></script>
-	<script src="http://localhost:81/projectSlim3/src/foundation/js/app.js"></script>
-</body>
-</html>
+{% endblock %}
+{% block footer %}
+	{{ parent() }}
+{% endblock %}
+{% block link %}
+	{{ parent() }}
+{% endblock %}

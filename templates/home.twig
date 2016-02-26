@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>WineBar</title>
-	<link rel="stylesheet" type="text/css" href="http://localhost:81/projectSlim3/src/foundation/css/foundation.min.css">
-	<link rel="stylesheet" type="text/css" href="http://localhost:81/projectSlim3/src/foundation/reveal/reveal.css">
-	<script type="text/javascript" src="http://localhost:81/projectSlim3/src/foundation/reveal/jquery-1.4.4.min.js"></script>
-	<script src="http://localhost:81/projectSlim3/src/foundation/reveal/jquery.reveal.js"></script>
+{% extends "base.twig" %}
 
-	<style>
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <style>
 		body{
 			text-align: center
 		}
@@ -41,45 +37,9 @@
 			font-size: 0.6em;
 		}
 	</style>
-</head>
-<body>
-	<nav>
-		<div class="title-bar" data-responsive-toggle="menu" data-hide-for="medium">
-	        <button class="menu-icon" type="button" data-toggle></button>
-	        <div class="title-bar-title" data-hide-for="large">Menu</div>
-	     </div>
-	      
-	      <div class="top-bar" id="menu">
-	        <div class="top-bar-left">
-	          <ul class="dropdown menu" data-dropdown-menu>
-	            <li class="menu-text">Sort Wine by :</li>
-	            <li>
-	              <a href="orderby/name">Name</a>
-	            </li>
-	            <li>
-	              <a href="orderby/year">Year</a>
-	            </li>
-	            <li>
-	              <a href="orderby/region">Region</a>
-	            </li>
-	            <li>
-	              <a href="orderby/country">Country</a>
-	            </li>
-	          </ul>
-	        </div>
-			<ul class="top-bar-right menu">
-	          	<li>
-	              <a href="#home">Home</a>
-	            </li>
-	        </ul>
-	      </div>
-	<nav>
-	<div class="callout large">
-		<div class="row column text-center">
-			<h1 id="home" class="mainTitre"><strong>Wine Bar</strong></h1>
-			<p class="lead">Wine from your area</p>
-		</div>
-	</div>
+{% endblock %}
+{% block content %}
+{{ parent() }}
     <div class="callout large">
         <div class="row" id="catalog">
 			{% for data in datas %}
@@ -99,18 +59,18 @@
 			{% endfor %}  
         </div> 
     </div>
-    <ul class="pagination">
-	  <li class="arrow previous"><a>&laquo;</a></li>
-	  <li><a href="http://localhost:81/ProjectSlim3/">1</a></li>
-	  <li><a href="http://localhost:81/projectSlim3/page2">2</a></li>
-	  <li><a href="http://localhost:81/projectSlim3/page3">3</a></li>
-	  <li class="arrow next"><a>&raquo;</a></li>
-	</ul>
 
-    <script src="http://localhost:81/projectSlim3/src/foundation/js/vendor/jquery.min.js"></script>
-    <script src="http://localhost:81/projectSlim3/src/js/main.js"></script>
-	<script src="http://localhost:81/projectSlim3/src/foundation/js/vendor/what-input.min.js"></script>
-	<script src="http://localhost:81/projectSlim3/src/foundation/js/foundation.min.js"></script>
-	<script src="http://localhost:81/projectSlim3/src/foundation/js/app.js"></script>
-</body>
-</html>
+    <!-- Pagination -->
+    <ul class="pagination">
+	  <li class="current"><a href="http://localhost:81/ProjectSlim3/">1</a></li>
+	  <li><a href="http://localhost:81/projectSlim3/page/2">2</a></li>
+	  <li><a href="http://localhost:81/projectSlim3/page/3">3</a></li>
+	</ul>
+{% endblock %}
+{% block footer %}
+	{{ parent() }}
+{% endblock %}
+{% block link %}
+	{{ parent() }}
+{% endblock %}
+
