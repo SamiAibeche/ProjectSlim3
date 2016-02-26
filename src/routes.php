@@ -7,7 +7,70 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 $app->get('/', function (Request $request, Response $response) use ($twig){
     //FindAll method from redBean (return an object with all wines )
-    $wines = R::findAll( 'wine' );
+    $wines = R::findAll( 'wine', 'LIMIT 4' );
+    try{
+
+      //ExportAll method (transform the object on an array)
+      $arrays = R::exportAll( $wines );
+
+      //Return data
+      if(!empty($arrays)){
+
+
+      //Show the page (from Twig and its template loader)
+      echo $twig->render('home.twig',array('datas' => $arrays));
+
+      } else {
+          echo "unvalid";
+      }
+
+    //IF 404 - 400 
+    } catch (ResourceNotFoundException $e) {
+
+      //Rendu de la page (à partir de Twig et de son chargeur de template)
+      echo $twig->render('error.twig',array('src' => '404'));
+
+    } catch (Exception $e) {
+
+      //Rendu de la page (à partir de Twig et de son chargeur de template)
+      echo $twig->render('error.twig',array('src' => '400'));
+    }
+});
+$app->get('/page2', function (Request $request, Response $response) use ($twig){
+    //FindAll method from redBean (return an object with all wines )
+    $wines =  R::findAll( 'wine', 'WHERE id > 4  LIMIT 4' );
+    
+    try{
+
+      //ExportAll method (transform the object on an array)
+      $arrays = R::exportAll( $wines );
+
+      //Return data
+      if(!empty($arrays)){
+
+
+      //Show the page (from Twig and its template loader)
+      echo $twig->render('home.twig',array('datas' => $arrays));
+
+      } else {
+          echo "unvalid";
+      }
+
+    //IF 404 - 400 
+    } catch (ResourceNotFoundException $e) {
+
+      //Rendu de la page (à partir de Twig et de son chargeur de template)
+      echo $twig->render('error.twig',array('src' => '404'));
+
+    } catch (Exception $e) {
+
+      //Rendu de la page (à partir de Twig et de son chargeur de template)
+      echo $twig->render('error.twig',array('src' => '400'));
+    }
+});
+$app->get('/page3', function (Request $request, Response $response) use ($twig){
+    //FindAll method from redBean (return an object with all wines )
+    $wines =  R::findAll( 'wine', 'WHERE id > 8  LIMIT 4' );
     try{
 
       //ExportAll method (transform the object on an array)
